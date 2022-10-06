@@ -1,105 +1,83 @@
-package com.mycompany.practicaprogramada2;
+
 import javax.swing.JOptionPane;
 
-
-
-
-
-
+/**
+ *
+ * @author Justin´s PC
+ */
 public class PracticaProgramada2 {
 
+    
     public static void main(String[] args) {
+        double TempVuelta;
+        double Tempits;
+        double PromedioVuelta = 0;
+        double PromedioPits = 0;
+        String LecVuelta;
+        String LecPits;
+        
 
-        int Numero;
-        String lecturadeNumero;
-
-        lecturadeNumero = JOptionPane.showInputDialog("Digite un numero del 1 al 12: ");
-        Numero = Integer.parseInt(lecturadeNumero);
-
-        switch (Numero) {
-            case 1:
-                JOptionPane.showMessageDialog(null, "Mes: Enero ");
-                JOptionPane.showMessageDialog(null, "Primer Cuatrimestre ");
-                break;
-            case 2:
-                JOptionPane.showMessageDialog(null, "Mes: Febrero ");
-                JOptionPane.showMessageDialog(null, "Primer Cuatrimestre ");
-                break;
-            case 3:
-                JOptionPane.showMessageDialog(null, "Mes: Marzo ");
-                JOptionPane.showMessageDialog(null, "Primer Cuatrimestre ");
-                break;
-            case 4:
-                JOptionPane.showMessageDialog(null, "Mes: Abril ");
-                JOptionPane.showMessageDialog(null, "Primer Cuatrimestre ");
-                break;
-            case 5:
-                JOptionPane.showMessageDialog(null, "Mes: Mayo ");
-                JOptionPane.showMessageDialog(null, "Segundo Cuatrimestre ");
-                break;
-            case 6:
-                JOptionPane.showMessageDialog(null, "Mes: Junio ");
-                JOptionPane.showMessageDialog(null, "Segundo Cuatrimestre ");
-                break;
-            case 7:
-                JOptionPane.showMessageDialog(null, "Mes: Julio ");
-                JOptionPane.showMessageDialog(null, "Segundo Cuatrimestre ");
-                break;
-            case 8:
-                JOptionPane.showMessageDialog(null, "Mes: Agosto ");
-                JOptionPane.showMessageDialog(null, "Segundo Cuatrimestre ");
-                break;
-            case 9:
-                JOptionPane.showMessageDialog(null, "Mes: Septiembre ");
-                JOptionPane.showMessageDialog(null, "Tercer Cuatrimestre ");
-                break;
-            case 10:
-                JOptionPane.showMessageDialog(null, "Mes: Octubre ");
-                JOptionPane.showMessageDialog(null, "Tercer Cuatrimestre ");
-                break;
-            case 11:
-                JOptionPane.showMessageDialog(null, "Mes: Noviembre ");
-                JOptionPane.showMessageDialog(null, "Tercer Cuatrimestre ");
-                break;
-            case 12:
-                JOptionPane.showMessageDialog(null, "Mes: Diciembre ");
-                JOptionPane.showMessageDialog(null, "Tercer Cuatrimestre ");
-                break;
+        for (int i = 0; i < 10; i++) {
+            LecVuelta = JOptionPane.showInputDialog("Ingrese el tiempo por vuelta");
+            TempVuelta = Double.parseDouble(LecVuelta);
+            PromedioVuelta = PromedioVuelta + TempVuelta / 10;
+            JOptionPane.showMessageDialog(null, LecVuelta);
 
         }
         
+        JOptionPane.showMessageDialog(null, PromedioVuelta);
         
-        
-        
-        
-        
-        
-        int Edad;
-        String lecturaEdad;
-
-        lecturaEdad = JOptionPane.showInputDialog("Digite la edad: ");
-        Edad = Integer.parseInt(lecturaEdad);
-
-        if (Edad <= 5) {
-            JOptionPane.showMessageDialog(null, "Primera infancia");
-        }
-
-        if (Edad >= 6 && Edad <= 11) {
-            JOptionPane.showMessageDialog(null, "Infancia");
-        }
-        if (Edad >= 12 && Edad <= 18) {
-            JOptionPane.showMessageDialog(null, "Adolescencia");
-        }
-        if (Edad >= 19 && Edad <= 30) {
-            JOptionPane.showMessageDialog(null, "Juventud");
-        }
-        if (Edad >= 30 && Edad <= 59) {
-            JOptionPane.showMessageDialog(null, "Adultez");
+        for (int i = 0; i < 10; i++) {
+            LecPits = JOptionPane.showInputDialog("Ingrese el tiempo de Pits");
+            Tempits = Double.parseDouble(LecPits);
+            JOptionPane.showMessageDialog(null, LecPits);
+            PromedioPits = PromedioPits + Tempits / 10;
 
         }
-        if (Edad > 60) {
-            JOptionPane.showMessageDialog(null, "Persona Mayor");
-        }
+        JOptionPane.showMessageDialog(null, PromedioPits);
+        
+        
+        JOptionPane.showMessageDialog(null, PromedioVuelta-PromedioPits);
+        
+        
+        int CantidadNiños;
+        String LecturaCantidad;
+        double estatura = 0;
+        String Lecturaestatura;
+        double promedioEstatura = 0;
+        int Menor100 = 0;
+        int Entre100y120 = 0;
+        int Entre121y130 = 0;
+        int Entre131y140 = 0;
+        int mayor140 = 0;
+        LecturaCantidad = JOptionPane.showInputDialog("Ingrese la cantidad de niños");
+        CantidadNiños = Integer.parseInt(LecturaCantidad);
 
+        for (int i = 0; i < CantidadNiños; i++) {
+            Lecturaestatura = JOptionPane.showInputDialog("Ingrese la estatura de los niños: ");
+            estatura = Double.parseDouble(Lecturaestatura);
+            if (estatura < 100) {
+                Menor100 = Menor100 + 1;
+
+            }
+            if (estatura > 100 && estatura < 120) {
+                Entre100y120 = Entre100y120 + 1;
+            }
+            if (estatura > 121 && estatura < 130) {
+                Entre121y130 = Entre121y130 + 1;
+            }
+            if (estatura > 131 && estatura < 140) {
+                Entre131y140 = Entre131y140 + 1;
+            }
+            if (estatura > 140) {
+                mayor140 = mayor140 + 1;
+            }
+        }
+       JOptionPane.showMessageDialog(null,"Los niños menores a 100 cm son: " + Menor100 + "\nLos niños entre 100 y 120cm son: " + Entre100y120 + "\nLos niños entre 121 y 130cm son: " + Entre121y130 + "\nLos niños entre 131 y 130cm son: " + Entre131y140 + "\nLos niños mayores a 140cm son: " + mayor140);
+        promedioEstatura = promedioEstatura + estatura;
+        JOptionPane.showMessageDialog(null,"El promedio de estatura es: " + promedioEstatura / CantidadNiños);
+      
+        
+        
     }
 }
